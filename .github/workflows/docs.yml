@@ -31,13 +31,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install pdoc
-        run: pip install pdoc
+      - name: Install dependencies
+        run: pip install pdoc torch numpy pandas scikit-learn scipy fastapi pydantic
 
       - name: Generate documentation
         working-directory: src
         run: |
-          pdoc --output-dir ../docs/html \
+          PYTHONPATH=. pdoc --output-dir ../docs/html \
             model dataset train evaluate predict preprocess_monipar api
 
       - name: Upload Pages artifact
