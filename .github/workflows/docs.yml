@@ -32,7 +32,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pdoc torch numpy pandas scikit-learn scipy fastapi pydantic
+        run: pip install -r requirements.txt
 
       - name: Generate documentation
         working-directory: src
