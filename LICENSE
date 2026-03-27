@@ -1,0 +1,43 @@
+Copyright (c) 2026 Karolann Mauger. All rights reserved.
+
+WEARPARK ML — RESEARCH SOURCE LICENSE
+
+This software and associated documentation files (the "Software") are the
+exclusive property of Karolann Mauger ("Author").
+
+Permission is granted to any person to view and study the source code of
+this Software solely for personal, non-commercial, and educational or
+academic research purposes, subject to the following conditions:
+
+1. RESTRICTIONS
+   You may NOT, without prior written permission from the Author:
+   a. Copy, reproduce, or redistribute the Software or any portion thereof;
+   b. Modify, adapt, translate, or create derivative works based on the Software;
+   c. Use the Software, in whole or in part, in any commercial product or service;
+   d. Sublicense, sell, rent, lease, or transfer rights to the Software;
+   e. Use the Software for clinical, diagnostic, or medical decision-making
+      purposes without explicit written authorization from the Author.
+
+2. ATTRIBUTION
+   Any academic work, publication, or research that references this Software
+   must provide proper attribution to the Author and this repository.
+
+3. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+   IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+4. MEDICAL DISCLAIMER
+   This Software is a research prototype. It is NOT a certified medical device
+   and must NOT be used as a substitute for professional medical diagnosis,
+   advice, or treatment. The Author assumes no liability for any clinical
+   outcome resulting from the use of this Software.
+
+5. TERMINATION
+   Any violation of the terms above automatically terminates the permissions
+   granted herein.
+
+For permissions beyond the scope of this license, contact the Author.
