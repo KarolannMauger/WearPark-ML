@@ -33,7 +33,7 @@ ICM-20948 (100 Hz)
  Embedded (CircuitPython)
       │  IMU stream
       ▼
-  Backend (Node.js)
+  Backend (Java Spring Boot)
       │  POST /predict/binary
       ▼
   WearPark ML (FastAPI)
@@ -183,7 +183,7 @@ Returns model readiness status.
 | Repository | Description |
 |---|---|
 | [WearPark-Embedded](https://github.com/KarolannMauger/WearPark-Embedded) | CircuitPython firmware — ICM-20948 data acquisition |
-| [WearPark-Backend](https://github.com/KarolannMauger/WearPark-Backend) | Node.js API — data storage and ML orchestration |
+| [WearPark-Backend](https://github.com/KarolannMauger/WearPark-Backend) | Java Spring Boot — data storage and ML orchestration |
 | [WearPark-App](https://github.com/KarolannMauger/WearPark-App) | Mobile app — user notifications and history |
 
 ---
