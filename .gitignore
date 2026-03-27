@@ -176,3 +176,6 @@ datasets/
 # WearPark — models and results
 models/
 results/
+
+# Generated documentation (rebuild with: python docs/generate.py)
+docs/html/
