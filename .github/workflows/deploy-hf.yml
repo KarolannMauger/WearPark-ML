@@ -35,15 +35,9 @@ jobs:
           cp src/model.py   /tmp/hf-space/src/
           cp src/predict.py /tmp/hf-space/src/
 
-          cp models/wearpark_cnn1d_best.pt /tmp/hf-space/models/
-          cp models/norm_mean.npy          /tmp/hf-space/models/
-          cp models/norm_std.npy           /tmp/hf-space/models/
-
-          cp results/metrics.json /tmp/hf-space/results/
-
-          cp Dockerfile                /tmp/hf-space/
+          cp Dockerfile                 /tmp/hf-space/
           cp requirements-inference.txt /tmp/hf-space/
-          cp hf-readme.md              /tmp/hf-space/README.md
+          cp hf-readme.md               /tmp/hf-space/README.md
 
           cat > /tmp/hf-space/.gitignore <<'EOF'
           __pycache__/
