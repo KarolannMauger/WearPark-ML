@@ -1,0 +1,60 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/api.py"
+      - "src/model.py"
+      - "src/predict.py"
+      - "models/**"
+      - "results/metrics.json"
+      - "Dockerfile"
+      - "requirements-inference.txt"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Push to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config --global user.name  "Karolann Mauger"
+          git config --global user.email "karolann.mauger@gmail.com"
+
+          git clone https://KarolannMauger:${HF_TOKEN}@huggingface.co/spaces/KarolannMauger/wearpark-ml /tmp/hf-space
+
+          mkdir -p /tmp/hf-space/src /tmp/hf-space/models /tmp/hf-space/results
+
+          cp src/api.py     /tmp/hf-space/src/
+          cp src/model.py   /tmp/hf-space/src/
+          cp src/predict.py /tmp/hf-space/src/
+
+          cp models/wearpark_cnn1d_best.pt /tmp/hf-space/models/
+          cp models/norm_mean.npy          /tmp/hf-space/models/
+          cp models/norm_std.npy           /tmp/hf-space/models/
+
+          cp results/metrics.json /tmp/hf-space/results/
+
+          cp Dockerfile                /tmp/hf-space/
+          cp requirements-inference.txt /tmp/hf-space/
+          cp hf-readme.md              /tmp/hf-space/README.md
+
+          cat > /tmp/hf-space/.gitignore <<'EOF'
+          __pycache__/
+          *.py[cod]
+          .venv/
+          venv/
+          .env
+          EOF
+
+          cd /tmp/hf-space
+          git add -A
+          git diff --cached --quiet && echo "Nothing to deploy." && exit 0
+          git commit -m "Deploy WearPark ML inference API"
+          git push
