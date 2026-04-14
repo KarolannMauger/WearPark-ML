@@ -179,11 +179,17 @@ class WearParkPredictor:
 
         signal = signal.astype(np.float32).copy()
 
+        # Replace any NaN/Inf that may come from degenerate or synthetic input
+        signal = np.nan_to_num(signal, nan=0.0, posinf=0.0, neginf=0.0)
+
         signal[:3] /= 9.81
 
         b, a = butter(4, 0.5 / (FS / 2), btype="high")
         for i in range(3):
             signal[i] = filtfilt(b, a, signal[i])
+
+        # Clean again after filtering (filtfilt can propagate NaN on edge-case signals)
+        signal = np.nan_to_num(signal, nan=0.0, posinf=0.0, neginf=0.0)
 
         return signal
 
