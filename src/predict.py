@@ -225,6 +225,10 @@ class WearParkPredictor:
         tensor = torch.tensor(signal).unsqueeze(0).to(self.device)
         prob   = torch.sigmoid(self.model(tensor)).item()
 
+        # Guard against NaN/Inf from degenerate input signals (e.g. synthetic data)
+        if not isinstance(prob, float) or prob != prob or prob == float("inf") or prob == float("-inf"):
+            prob = 0.0
+
         # Three-state decision
         if prob >= _THRESHOLD_HIGH:
             state = "parkinson"
